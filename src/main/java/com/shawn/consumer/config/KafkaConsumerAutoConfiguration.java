@@ -61,6 +61,7 @@ public class KafkaConsumerAutoConfiguration {
         Map<String, Object> propsMap = new HashMap<>();
         propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaConsumerProperties.getBrokerAddress());
         propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaConsumerProperties.getGroupId());
+        //propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, "group");
         propsMap.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true); //自动commit
         propsMap.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "100"); //定时commit的周期
         propsMap.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000"); //consumer活性超时时间

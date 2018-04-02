@@ -53,10 +53,11 @@ public class KafkaProducerAutoConfiguration {
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         // value to block, after which it will throw a TimeoutException
         props.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 5000);
-        props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, SimplePartitioner.class);
+        //props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, SimplePartitioner.class);
 
 
-        props.put(ProducerConfig.ACKS_CONFIG, "all");
+        //props.put(ProducerConfig.ACKS_CONFIG, "-1");
+        props.put(ProducerConfig.ACKS_CONFIG, "1");
         props.put(ProducerConfig.RETRIES_CONFIG, 1);
         props.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);
         props.put(ProducerConfig.LINGER_MS_CONFIG, 1);
